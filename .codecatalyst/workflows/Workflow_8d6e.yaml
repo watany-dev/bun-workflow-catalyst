@@ -18,8 +18,8 @@ Actions:
     Identifier: aws/github-actions-runner@v1
     Configuration:
       Steps:
-        - name: Checkout
-          uses: actions/checkout@v3
+        # - name: Checkout
+        #   uses: actions/checkout@v3
         - uses: oven-sh/setup-bun@v1
         - name: check lock diff
           run: diff <(bun bun.lockb) yarn.lock
