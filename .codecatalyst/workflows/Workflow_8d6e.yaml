@@ -22,5 +22,5 @@ Actions:
 
     Configuration:
       Steps:
-        - uses: setup-node@v4
+        - uses:  actions/setup-node@v4
         - run: npm i
