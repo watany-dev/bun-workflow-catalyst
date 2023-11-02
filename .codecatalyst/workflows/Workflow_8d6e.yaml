@@ -45,6 +45,6 @@ Actions:
         - Run: npm i
       Container:
         Registry: ECR
-        Image: public.ecr.aws/docker/library/node:20-slim
+        Image: public.ecr.aws/amazonlinux/amazonlinux:2023
     Compute:
       Type: EC2
