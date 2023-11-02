@@ -41,6 +41,7 @@ Actions:
     Configuration:
       # Required - Steps are sequential instructions that run shell commands
       Steps:
+        - Run: apt-get update && apt-get install -y git
         - Run: npm i
       Container:
         Registry: ECR
