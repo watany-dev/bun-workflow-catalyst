@@ -21,6 +21,9 @@ Actions:
         - WorkflowSource
 
     Configuration:
+      Container:
+        Registry: ECR
+        Image: public.ecr.aws/docker/library/node:20-slim
       Steps:
         - uses:  actions/setup-node@v4
         - run: npm i
