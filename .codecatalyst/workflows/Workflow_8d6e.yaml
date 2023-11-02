@@ -22,6 +22,5 @@ Actions:
 
     Configuration:
       Steps:
-        - uses: oven-sh/setup-bun@v1
-        - name: check lock diff
-          run: diff <(bun bun.lockb) yarn.lock
+        - uses: setup-node@v4
+        - run: npm i
