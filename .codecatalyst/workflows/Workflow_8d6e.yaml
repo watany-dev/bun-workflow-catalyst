@@ -19,11 +19,31 @@ Actions:
     Inputs:
       Sources:
         - WorkflowSource
-
     Configuration:
+      Steps:
+        - uses: actions/setup-node@v4
+        - run: npm i
+  Build_6d:
+    # Identifies the action. Do not modify this value.
+    Identifier: aws/build@v1.0.0
+    # Specifies the source and/or artifacts to pass to the action as input.
+    Inputs:
+      # Optional
+      Sources:
+        - WorkflowSource # This specifies that the action requires this Workflow as a source
+    Outputs:
+      # Optional; Automatically discover reports for popular test frameworks
+      AutoDiscoverReports:
+        Enabled: true
+        # Use as prefix for the report files
+        ReportNamePrefix: rpt
+    # Defines the action's properties.
+    Configuration:
+      # Required - Steps are sequential instructions that run shell commands
+      Steps:
+        - Run: npm i
       Container:
         Registry: ECR
         Image: public.ecr.aws/docker/library/node:20-slim
-      Steps:
-        - uses:  actions/setup-node@v4
-        - run: npm i
+    Compute:
+      Type: EC2
